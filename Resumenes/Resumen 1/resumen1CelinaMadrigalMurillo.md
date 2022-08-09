@@ -41,4 +41,24 @@ They typically store whole rows in a physical block.
 ### Column-Oriented Databases
 They organize each column in its own set of physical blocks instead of packing the whole rows into a block.
 ### Massively Parallel Processing (MPP) Architectures 
-An MPP architecture enables you to use all the resources available in the cluster for processing data, which dramatically increases performance of petabyte scale data warehouses.
+An MPP architecture enables you to use all the resources available in the cluster for processing data, which dramatically increases performance of petabyte scale data warehouses.  
+## Amazon Redshift Deep Dive 
+It offers key benefits for performant, 
+cost-effective data warehousing.  
+### Integration with Data Lake
+Red Redshift Spectrum makes it easier to both query data and write data back to your data lake in open file formats.
+### Performance
+Amazon Redshift offers multiple features to achieve superior performance, including: High performing hardware, AQUA (preview), Efficient storage and high-performance query processing, Materialized views, Auto workload management to maximize throughput and performance and Result caching.
+### Durability and Availability
+Amazon Redshift automatically detects and replaces any failed node in your data warehouse cluster.
+### Elasticity and Scalability
+Elastic resize and Concurrency Scaling 
+### Amazon Redshift Managed Storage
+It enables you to scale and pay for compute and storage independently so you can size your cluster based only on your compute needs. 
+## Operations
+### Ideal Usage Patterns 
+Enterprises use
+Amazon Redshift to do the following: Running enterprise BI and reporting, Analyze global sales data for multiple products, Store historical stock trade data, Analyze ad impressions and clicks, Aggregate gaming data, Analyze social trends and Measure clinical quality, operation efficiency, and financial performance in health 
+care
+### Anti-Patterns 
+OLTP, Unstructured data and BLOB data
