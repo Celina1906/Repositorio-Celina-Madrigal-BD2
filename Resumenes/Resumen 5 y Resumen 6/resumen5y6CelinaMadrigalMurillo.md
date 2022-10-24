@@ -62,6 +62,7 @@ The filter tree is a runtime data structure we developed that is simultaneously 
 ## 5. QUERY RESTARTS
 
 ### 5.1 Usage scenarios and benefits
+
 **Hiding transient failures.** Spanner fully hides transient failures during query execution. This is unlike most other distributed query processors that hide some transient failures but not necessarily all.  
 **Simpler programming model: no retry loops.** Retry loops in database client code is a source of hard to troubleshoot bugs, since writing a retry loop with proper backoff is not trivial.  
 **Streaming pagination through query results.** Traditionally, interactive applications use paging to retrieve results of a single query in portions that fit into memory and constitute a reasonable chunk of work to do on the client side or on a middle tier.  
@@ -73,6 +74,8 @@ The filter tree is a runtime data structure we developed that is simultaneously 
 ## 5.2 Contract and requirements
 To support restarts Spanner extended its RPC mechanism with an
 additional parameter, a restart token. Restart tokens accompany all query results, sent in batches, one restart token per batch.  This opaque restart token blob, when added as a special parameter to the original request prevents the rows already returned to the client to be returned again. The restart contract makes no repeatability guarantees. The restart implementation has to overcome the following challenges:
+
+**Dynamic resharding.** Spanner uses query restarts to continue execution when a server loses ownership of a shard or boundaries of a shard change. That is, a request targeted to a key range needs to cope with ongoing splitting, merging, and moving of the data.
 
 **Non-determinism.** Many opportunities for improving query performance in a distributed environment present sources of nondeterministic execution, which causes result rows to be returned in some non-repeatable order.
 
@@ -93,7 +96,7 @@ As with SSTables, Ressi stores a database as an LSM tree, whoselayers are period
 
 #### Live migration from SSTables to Ressi
 
-Migrating the storage format from SSTable to Ressi for a globally replicated, highly available database like Spanner requires both extraordinary care in conversion to ensure data integrity and minimal, reversible rollout to avoid user-visible latency spikes or outages. Not only must user data be preserved in its entirety, the entire migration process must be minimally invasive and perturb ongoing user workloads as little as possible. 
+Migrating the storage format from SSTable to Ressi for a globally replicated, highly available database like Spanner requires both extraordinary care in conversion to ensure data integrity and minimal, reversible rollout to avoid user-visible latency spikes or outages. Not only must user data be preserved in its entirety, the entire migration process must be minimally invasive and perturb ongoing user workloads as little as possible. Spanner is capable of live data migrations via bulk data movement and transactions. Spanner’s data movement mechanism copies data (and converts as needed) from the current group, which continues to serve live data from a full set of replicas, to the new group. 
 
 ## 8. LESSONS LEARNED AND CHALLENGES
 
