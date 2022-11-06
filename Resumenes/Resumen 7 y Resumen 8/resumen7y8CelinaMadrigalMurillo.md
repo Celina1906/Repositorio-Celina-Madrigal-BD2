@@ -22,6 +22,7 @@ it.
 
 **5. Network & IT Ops:** Graph databases are a natural fit for network and IT ops; after all, a network is a graph. The graph’s connected structure enables network managers to conduct sophisticated impact analyses.
 
+
 # A Brief Introduction to Graph Data Platforms 
 
 ## What Are Graph Databases Good for?
@@ -101,6 +102,10 @@ The context provided by these data connections is essential to identifying frien
 
 **• Better, faster and more powerful querying and analytics:** Graph data stores provide superior query performance with connected data using native storage and native indexed data structure.
 
+<br></br>
+<br></br>
+<br></br>
+
 # The Return on Connected Data
 
 ## More Connections, More Value
@@ -115,7 +120,49 @@ Enticed by the promise of valuable business insights, companies have invested in
 
 Because relational databases don’t persist relationship information in storage or any other stage of their analytic exercises, finding connections requires an enormous amount of extra processing. And persisting these connections over their lifetime is next to impossible.
 
+#### WHAT IS CONNECTED DATA?
+
+Connected data is the representation, usage and persistence of relationships between data elements.
+
+#### CONNECTED DATA ENABLES ORGANIZATIONS TO:
+
+• Gain a 360-degree view of a customer   
+• Build a complete network topology  
+• Deliver relevant recommendations in real-time  
+• Obtain the visibility required to prevent fraud  
+• Introduce data science and AI workflows to applications
+
 ### Data, Data Everywhere, Nor any Drop to Drink
 
 Organizations are surrounded by data but they’re limited in 
 their ability to do anything with it.
+
+Data doesn’t become connected by simply dumping it into a central data lake. Data becomes connected when you treat relationship information as a first-class entity — persisting it, assigning properties to it, and using it as a means to develop context for applications. Thus, it’s best to think of big data needing to be connected, not merely contained.
+
+### The Power of Connected Data
+
+The biggest benefit of connected data is the ability to provide a connected view of the data to your analytic and operational applications, thereby gaining and growing intelligence downstream. The connections can be made available or revealed to applications or business users to make operational decisions. 
+
+Connected data applies to a variety of contexts. In addition to refining the output of your recommendation engines, you can better understand the flow of money to detect fraud and money laundering, and assess the risk of a network outage across computer networks. Connected data also helps you see when and how relationships change over time.
+
+Connected data is most powerful when it provides operational, real-time insights and not just after-the-fact analytics. Real-time insights allow business users and applications to make business decisions and act in real-time. Thus, recommendation engines leverage data from the current user session to deliver highly relevant options that the customer wants or needs at that moment.
+
+IT organizations can proactively mitigate network issues that would otherwise cause an outage, and the antifraud team can put an end to potentially malicious activity before it results in a substantial loss.
+
+### Quench Your Thirst for Insights with Connected Data
+
+A graph database makes it easy to express and persist relationships across many types of data elements. A graph database is a highly scalable transactional and analytic database that stores data relationships as first-class entities. 
+
+Graph databases are simple and agile due to their schema-optional nature. Because the structural overhead of traditional database schema is eliminated, graphs can be easily changed or updated.
+
+You can also get more value out of your big data technology by using graphs to transfer knowledge of what the organization has done across other departments. Graphs keep relationship information always at hand, but that information changes over time. The graph can therefore become a longstanding system of record that delivers value to different departments.
+
+By connecting data, graphs also enable you to leverage all of the data you’ve dumped into your data lake.
+
+Identifying connections in your data is only helpful if you know what to do with them. Graphs can help you with that, too. Today’s applications, whether they be recommendation engines or anti-money laundering systems, are powered by graphs. The graph database operationalizes the data by making it possible for the app to traverse the data. Once you have this ability, the data becomes actionable.
+
+### Neo4j: Your Path to Connected Data
+
+Neo4j offers an innovative, reliable native graph platform that reveals and maintains the integrity of connected data from the moment it’s conceived through each stage of design, development, analysis, implementation, and operation.
+
+Not only does Neo4j make connected data possible; it makes connected data easy. As graphs are built out of your data, Neo4j automatically creates connections as they exist and reveals connections that you may have never considered. 
